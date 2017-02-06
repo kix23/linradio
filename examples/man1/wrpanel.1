@@ -1,0 +1,109 @@
+.TH WRPANEL 1
+
+.SH NAME
+wrpanel - Graphical WiNRADiO control panel
+
+.SH SYNOPSIS
+.B wrpanel [<port>]
+
+.SH DESCRIPTION
+A Tcl/Tk virtual control panel for WiNRADiO receivers (WR-1xx0/WR-3x00).
+.TP
+.B <port>
+0-3, 0x180-0x1b8 (see tclradio(1)).
+
+.TP
+Legal syntax for frequencies: "15e6", "15000k", "15 Mhz", "15 m", etc.
+
+.SH CONTROLS
+.TP
+.B "Exit"
+Saves the current state and database, exits.
+.TP
+.B "Sweep"
+Runs a signal strength sweep between the specified bounds. Subsequent sweeps display maximum signal strengths too.
+.TP
+.B "<<", ">>"
+Shifts the spectrum range down/up.
+.TP
+.B "<>"
+Enlarges the spectrum range.
+.TP
+.B "<[]>", "[><]"
+Widens/shrinks the spectrum range.
+.TP
+.B "SS delay"
+Delay between signal strength measurements, in ms.
+.TP
+.B [Drag] button 1
+Tunes.
+.TP
+.B Drag button 2
+Scrolls the spectrum display.
+.TP
+.B Drag button 3
+Selects a spectrum subrange for the next sweep.
+
+.SH KEYBOARD SHORTCUTS
+.TP
+.B PageUp/Down
+Adjusts the frequency by 50 kHz.
+.TP
+.B Up/Down
+Adjusts the frequency by 1 kHz.
+.TP
+.B Shift-Up/Down
+Adjusts the frequency by 10 Hz.
+.TP
+.B Ctrl-[mnwclu]
+Sets the demodulation mode.
+.TP
+.B Alt-a
+Adds the current frequency to the database.
+.TP
+.B Alt-b
+Adds the current band (spectrum range) to the database.
+.TP
+.B Alt-e
+Edits the current database entry.
+.TP
+.B Alt-d
+Deletes the current database entry.
+.TP
+.B Alt-PageUp/Down
+Scrolls the database window.
+.TP
+.B Alt-Up/Down
+Jumps to the next/previous station/band.
+.TP
+.B Alt-Shift-Up/Down
+Jumps to the next/previous station with the same kind of signal.
+.TP
+.B Alt-Home
+Jumps to the current band.
+.TP
+.B Alt-s
+Saves the database (in case you forget to exit cleanly).
+
+.SH FILES
+.TP
+.B $WRSTATERC (default: ~/.wrstaterc)
+Receiver state and configuration.
+.TP
+.B $WRFREQDB (default: ~/.wrfreqdb)
+Frequency "database" in ascii format.
+
+.SH CAVEATS
+.TP
+Database not saved on dirty exit.
+.TP
+The characters '{' and '}' are illegal in the database.
+.TP
+This is getting too big for Tcl/Tk.
+
+.SH SEE ALSO
+.BR tclsh (1),
+.BR wish (1),
+.BR tclradio (1),
+.BR wishradio (1),
+.BR wrpanel (1)

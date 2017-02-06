@@ -1,0 +1,6 @@
+WiNRADiO Communications - Low-level receiver interface code.
+Michael McCormack - original WR-1000i kernel module and ioctl API.
+Yuri Muzyka - original Linux port of WiNRADiO drivers.
+pab@users.sourceforge.net - toolkit, module, language bindings, wrpanel.
+Stewart Scott - Serial port performance improvements.
+Bert Driehuis - FreeBSD support.

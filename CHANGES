@@ -1,0 +1,46 @@
+Version 0.7
+- Fixed #includes and #ifdefs for recent kernels/distribs/compilers.
+- FreeBSD support (Bert Driehuis)
+- Major speed improvement for serial receivers with the kernel module
+  (Thanks to Stewart Scott for helping debug this).
+- Integrated latest modifications for WR2000 series:
+  SetMode in AM
+- Special handling of 2.55GHz-2.65GHz ?
+- More interpolation in SetFrequency
+- Features missing:
+  RMD_6k, RMD_2500 in SetMode2000()
+  LastVco* in SetFreq2000
+  New 5769 chip ?
+  SetAgc2000, SetIfg2000, GetSLevel2000 not updated yet
+- Major changes in SetBfo2000
+- AGC supported 
+ 
+Version 0.6
+
+- Source tree reorganized
+
+Version 0.4
+
+- Kernel module for all receivers, internal/external
+
+Version 0.3
+
+- Serial receiver support (not as module)
+- RPM binary distribution
+- Kernel module ("make module") (NOT YET)
+- wrlib subdirectory with new WiNRADiO source code
+- Port autodetect
+- Demo scripts
+
+Version 0.2
+
+- Asynchronous spectrum scan
+- Stations database
+- Support for external receivers (not tested)
+- Auto scan resolution
+- IFShift (not tested)
+- Manual pages
+- Keyboard shortcuts
+- "configure" script
+- "make install", "make uninstall"
+- CVS Source code management

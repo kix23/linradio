@@ -1,0 +1,81 @@
+WiNRADiO toolkit for Linux.
+Please read the license and disclaimer in file "COPYING".
+
+This package allows you to use WiNRADiO receivers with Linux. It has
+been reported to work with WR-1000i, WR-1500i, WR-3150i, WR-1500e and
+WR-1550e devices on various x86 Linux systems.
+
+CONTENTS
+----------------------------------------------------------------------------
+
+* A port of GPL'ed driver source code from WiNRADiO Communications
+  (directory driver/wrlib/).
+
+
+* A user-mode driver (linradio-toolkit-usermode):
+    - Very portable, easy installation
+    - Must be run as root for internal receivers
+    - Slow initialization
+    - Does not keep track of the receiver state
+    - Not appropriate for transient applications
+
+  
+* A loadable kernel module (linradio-toolkit-module):
+  Replacement for the user-mode driver, provides:
+    - mutual exclusion
+    - persistent receiver state
+    - no initialization delay
+    - non-root operation
+    - access control based on file permission.
+
+
+* A command-line utility to control the radio from shell scripts,
+  e.g. wrcontrol -P 0x180 -p 1 -u 0 -a 0 -f 96e6 -m 3
+
+
+* Tcl bindings for controlling WiNRADiO receivers.
+
+  Documentation is in tcl/man1/tclradio.1. Example:
+      # ./tclradio 
+      % winradio wr 0x180
+      % wr -p 1 -f 15e6 -m AM -a 0 -u 0 -v 50
+
+
+* Perl bindings for controlling WiNRADiO receivers.
+
+  See perl/winradio.pl and example/ssrecord.pl.
+  This is new - please improve.
+
+
+* A Tcl/Tk graphical control panel.
+
+  Run "wrpanel" (after installing).
+  Documentation is in man1/wrpanel.1.
+
+
+* Miscellaneous sample scripts (directory examples/):
+  minipanel.tcl, ssrecord.tcl, sweep.tcl, etc.
+
+
+BUGS
+----------------------------------------------------------------------------
+
+See "KNOWN-PROBLEMS" in this directory first.
+Report bugs at http://sourceforge.net/bugs/?func=addbug&group_id=906
+Please include information from stdio, /var/log/messages, dmesg, etc.
+
+
+FURTHER INFORMATION
+----------------------------------------------------------------------------
+
+WiNRADiO home page:   http://www.winradio.com/
+LinRadio home page:   http://www.linradio.com/
+
+LinRadio development: http://linradio.sourceforge.net/
+                      http://sourceforge.net/project/?group_id=906
+
+About Tcl/Tk:         http://www.scriptics.com/
+
+About Linux:          http://www.linux.org/
+
+About free software:  http://www.fsf.org/

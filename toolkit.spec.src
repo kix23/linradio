@@ -1,0 +1,58 @@
+Summary: WiNRADiO toolkit for Linux
+Name: %{name}
+Exclusiveos: Linux
+Version: %{version}
+Release: %{release}
+Copyright: GPL
+Group: TODO
+Source: http://linradio.sourceforge.net/
+Provides: linradio-toolkit
+
+%description
+This package allows WiNRADiO radio receivers to be used with Linux.
+Contains a driver, a command-line control program, language bindings
+for TCL and Perl, and sample applications including a graphical
+control panel.
+
+%files
+%defattr(-,root,root)
+%{module-path}
+
+%{install-prefix}/lib/liblinradio.so.%{so-version}
+%{install-prefix}/lib/liblinradio.so
+
+%dir %{install-prefix}/include/linradio
+%{install-prefix}/include/linradio/wrapi.h
+%{ioctl-path}
+
+%{dev0}
+%{dev1}
+%{devS0}
+%{devS1}
+%{devS2}
+%{devS3}
+
+%{install-prefix}/bin/wrcontrol
+%{install-prefix}/bin/tclradio
+%{install-prefix}/bin/wishradio
+%{install-prefix}/bin/wrpanel
+
+%{install-prefix}/man/man1/tclradio.1
+%{install-prefix}/man/man1/wishradio.1
+%{install-prefix}/man/man1/wrpanel.1
+
+%dir %{install-prefix}/lib/linradio-toolkit
+%{install-prefix}/lib/linradio-toolkit/minipanel.tcl
+%{install-prefix}/lib/linradio-toolkit/remote.tcl
+%{install-prefix}/lib/linradio-toolkit/ssrecord.pl
+%{install-prefix}/lib/linradio-toolkit/ssrecord.tcl
+%{install-prefix}/lib/linradio-toolkit/sweep.tcl
+%{install-prefix}/lib/linradio-toolkit/wrpanel.tcl
+
+%dir %{install-prefix}/doc/linradio-toolkit-%{version}
+%{install-prefix}/doc/linradio-toolkit-%{version}/README
+%{install-prefix}/doc/linradio-toolkit-%{version}/INSTALL
+%{install-prefix}/doc/linradio-toolkit-%{version}/CHANGES
+%{install-prefix}/doc/linradio-toolkit-%{version}/TODO
+%{install-prefix}/doc/linradio-toolkit-%{version}/KNOWN-PROBLEMS
+%{install-prefix}/doc/linradio-toolkit-%{version}/AUTHORS

@@ -1,0 +1,14 @@
+wrcontrol.o: wrcontrol.c wrlib/wrapi.h
+wrmod.o: wrmod.c wrlib/wrapi.h radio_ioctl.h
+wrstub.o: wrstub.c wrlib/wrapi.h radio_ioctl.h
+wrbfo.o: wrlib/wrbfo.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h
+wrcmd.o: wrlib/wrcmd.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h \
+ wrlib/wrserial.h
+wrfreq.o: wrlib/wrfreq.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h
+wrifg.o: wrlib/wrifg.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h
+wrinit.o: wrlib/wrinit.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h
+wrio.o: wrlib/wrio.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h \
+ wrlib/wrserial.h
+wrmode.o: wrlib/wrmode.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h
+wrserial.o: wrlib/wrserial.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h
+wrss.o: wrlib/wrss.c wrlib/wrdef.h wrlib/wrapi.h wrlib/wrio.h

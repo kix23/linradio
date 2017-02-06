@@ -1,0 +1,38 @@
+BUILD
+-----
+
+Minimum requirements (might work with other versions):
+- Linux 2.2.5
+- gcc 2.7.2.3
+- Tcl 8.0
+- Tk 8.0
+
+Run "./configure" to automatically detect include/library paths.
+If this fails, you will have to edit ".config" manually.
+
+Choose the module or usermode driver in Makefile.defs.
+Set the default radio port (0x180..0x1B8, 0..3) in Makefile.defs.
+
+Type "make".
+
+
+TEST
+----
+
+'make -C driver test' will detect and the receiver.
+
+Include "linradio-toolkit-X.Y/driver" in your LD_LIBRARY_PATH.
+	cd examples
+	./wrpanel.tcl
+should display the graphical control panel.
+You may need to delete ~/.wrstaterc and ~/.wrfreqdb if you have used
+an incompatible version of wrpanel before.
+
+
+INSTALL
+-------
+
+Add 'alias char-major-82 linradio' to /etc/conf.modules
+
+Type "make install" as root.
+

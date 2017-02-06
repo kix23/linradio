@@ -1,0 +1,37 @@
+- hamlib support
+- WR-3500 detection: check gecom's patch
+- SetIFGain
+
+Developers: you can enable DEBUG in wrlib/wrdef.h
+
+- Serial speed : the default driver configuration is to stay at 9600bps.
+  You can enable WRSERIAL_11520 in driver/wrlib/wrdef.h. If communications
+  hang, you will need to power the receiver off/on.
+
+- Find out why the Windows driver for external receivers is faster.
+
+- RPM spec dependencies, etc
+
+- Configure /etc/conf.modules with a RPM post-install script
+
+- Remove windowish naming conventions in wrlib. Beware : would have to
+  do that for every new driver from WiNRADiO...
+
+- How to remove timing loops in wrlib.c (the synchronous protocol
+  doesn't help) ?
+
+- Handle >2GHz frequencies ?
+
+- Remove floating-point code ?
+
+- Module: drive UART directly ?
+- Module: drive UART through serial.o ?
+- Module: access serial port through a pppd- or irattach-like process ?
+
+- Signal processing tools, digital mode decoders
+
+- Squelch
+
+- Real database (not script/ascii-based)
+
+- wrkit for the Palm Pilot

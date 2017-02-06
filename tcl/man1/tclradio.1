@@ -1,0 +1,71 @@
+.TH TCLRADIO/WISHRADIO 1
+
+.SH NAME
+tclradio - WiNRADiO-enabled Tcl shell
+
+wishradio - WiNRADiO-enabled Tcl/Tk shell
+
+.SH SYNOPSIS
+.B winradio
+<command-name> <port>
+
+.B <command-name>
+<arguments>
+
+.SH DESCRIPTION
+Tcl/Tk shells with support for WiNRADiO WR-1x00/WR-3x00 receivers.
+.TP
+.B <port>
+0x180-0x1b8 (internal receiver) or
+0-3 (external receiver on /dev/ttySx)
+.TP
+.B <command-name>
+A new Tcl command for controlling the receiver at the specified port.
+.PP
+Arguments supported by \fB<command>\fR:
+.TP
+.B -p\fR {0,1}
+Turns power off/on.
+.TP
+.B -f\fR {150e3-1.5e9}
+Sets the receiver frequency, in Hz.
+.TP
+.B -m\fR {AM,FMN,FMW,CW,LSB,USB,FMM,FM6}
+Sets the receiver mode.
+.TP
+.B -v\fR {0-100}
+Sets the audio output volume.
+.TP
+.B -u\fR {0,1}
+Sets mutes off/on.
+.TP
+.B -a\fR {0,1}
+Sets attenuation off(DX)/on(Local).
+.TP
+.B -A\fR {0,1}
+Sets Automatic Gain Control (AGC) off/on.
+.TP
+.B -b\fR <freq>
+Sets BFO (untested).
+.TP
+.B -i\fR <freq>
+Sets IF shift.
+.TP
+.B {p,f,m,v,u,a,b,i}
+Returns the current value of the setting.
+.TP
+(without options)
+Returns the current value of all settings.
+.TP
+.B ss
+Returns signal strength (0-120).
+.TP
+.B version
+Returns a string describing the receiver.
+
+.SH SEE ALSO
+.BR tclsh (1),
+.BR wish (1),
+.BR tclradio (1),
+.BR wishradio (1),
+.BR wrpanel (1)

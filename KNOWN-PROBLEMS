@@ -1,0 +1,19 @@
+- The module bypasses the serial driver. Therefore you must
+  "rmmod serial" before loading linradio.o
+
+- Volume state not initialized correctly with serial receivers
+
+- Database entries may not contain '{' or '}'
+
+- ~/.wrstaterc and ~/.wrfreqdb must be deleted by hand if corrupted.
+
+- ~/.wr* not saved on control-c
+
+- wrpanel: X11 focus lost after DB entry editing (with fvwm2)
+
+- wrpanel: DB commands fail if no entry selected
+
+- The kernel driver won't work with FPU emulation
+
+- Floating-point in the kernel: FPU state is saved/restored when
+  entering ioctls and rescheduling. Hopefully this is enough.

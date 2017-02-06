@@ -1,0 +1,3 @@
+tclradio.o: tclradio.c
+tclwr.o: tclwr.c /usr/include/tcl.h ../driver/wrlib/wrapi.h
+wishradio.o: wishradio.c

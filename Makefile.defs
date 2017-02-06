@@ -1,0 +1,26 @@
+# Kind of driver to build (module or usermode).
+# Affects compilation in ./driver only.
+# 'make clean' after changing this !!!
+#DRIVER_KIND=	module
+DRIVER_KIND=	usermode
+
+# Default port for tests (0..3, 0x180..0x1b8)
+PORT=		0x180
+PORT=		1
+
+# Installation prefix (/usr, /usr/local, ...).
+# Module always goes to /lib/module.
+INSTALL=	/usr
+
+######################################################################
+
+# Toolkit version
+VERSION=	0.7
+# RPM release
+RELEASE=	1
+# Winradio API version (liblinradio.so.$(SO_VERSION))
+SO_VERSION=	1.0
+
+CC=		gcc
+CFLAGS=		-O2 -Wall -ffast-math
+LD=		ld
